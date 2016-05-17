@@ -121,7 +121,7 @@ class BasicLog {
 			StackTraceElement[] elements = Thread.currentThread().getStackTrace();
 			if (elements.length > 5) {
 				StackTraceElement element = elements[5];
-				String txt = String.format("FileName:[ %s ] Method:( %s )  Line:( %d )", element.getFileName(),
+				String txt = String.format("FileName[ %s ] Method[ %s ] Line[ %d ]", element.getFileName(),
 						element.getMethodName(), element.getLineNumber());
 				// String txt = String.format("Time:[ %d ] Thread:[ %d ] Method:( %s ) FileName:[ %s ] Line:( %d )",
 				// System.currentTimeMillis(), Thread.currentThread().getId(), element.getMethodName(),

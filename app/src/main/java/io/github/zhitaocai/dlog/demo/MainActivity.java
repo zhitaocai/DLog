@@ -34,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
 		DLog.te(DOWNLOAD_TAG, this, new Exception("测试的Exception"), "下载测试 4");
 		DLog.tv(DOWNLOAD_TAG, this, new Exception("测试的Exception"), "下载测试 %d", 5);
 
+		// 输出详细的调用信息
+		DLog.setIsLogInvokeInfo(true);
+		DLog.ti(DOWNLOAD_TAG, this, "下载测试 1:会输出详细的调用信息");
+		DLog.setIsLogInvokeInfo(false);
+
+
 		Log.i("aaaaa", "=======采用Proguard控制Log输出=======");
 		proguardLogTest();
 
@@ -64,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
 		// 测试1: log输出中使用方法
 		Log.i("aaaaa", "=======proguard 1=======");
 		byte[] input = new byte[] { 1, 2 };
-		if (BuildConfig.DEBUG) {
+		if (BuildConfig.ISDEBUG) {
 			DLog.i("network", "加密byte数组: %s", formatByte2String(input));
 		}
 
 		// 测试2: log输出中使用方法，并且该方法中和其他存在关联
 		Log.i("aaaaa", "=======proguard 2=======");
-		if (BuildConfig.DEBUG) {
+		if (BuildConfig.ISDEBUG) {
 			DLog.ti(DOWNLOAD_TAG, this, "下载测试 %d", incrementI());
 			DLog.ti(DOWNLOAD_TAG, this, "下载测试 %d", incrementI());
 			DLog.ti(DOWNLOAD_TAG, this, "下载测试 %d", incrementI());
@@ -79,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 		// 测试3: 外部先构建好一个对象，然后输出该对象的toString
 		Log.i("aaaaa", "=======proguard 3=======");
 		TestModel testModel = new TestModel("下载测试 1000");
-		if (BuildConfig.DEBUG) {
+		if (BuildConfig.ISDEBUG) {
 			DLog.ti(DOWNLOAD_TAG, this, testModel.toString());
 		}
 	}

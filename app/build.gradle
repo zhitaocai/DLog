@@ -22,16 +22,16 @@ android {
 	}
 	buildTypes {
 		debug {
-			buildConfigField "boolean", "ISDEBUG", "false"
+			buildConfigField "boolean", "ISDEBUG", "true"
 		}
 		release {
-			buildConfigField "boolean", "ISDEBUG", "true"
+			buildConfigField "boolean", "ISDEBUG", "false"
 			minifyEnabled true      // 开启混淆
 			shrinkResources true    // 去除无效的资源文件(依赖于minifyEnabled 为true)
 			zipAlignEnabled true    // Zipalign优化
 			signingConfig signingConfigs.release
-			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			//proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}
 }

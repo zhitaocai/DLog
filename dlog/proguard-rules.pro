@@ -17,20 +17,21 @@
 #}
 
 # 删除代码中DLog相关的代码
--assumenosideeffects class io.github.zhitaocai.dlog.DLog {
-    public static void i(...);
-    public static void e(...);
-    public static void d(...);
-    public static void w(...);
-    public static void v(...);
+#-assumenosideeffects class io.github.zhitaocai.dlog.DLog {
+#    public static void i(...);
+#    public static void e(...);
+#    public static void d(...);
+#    public static void w(...);
+#    public static void v(...);
+#
+#    public static void ti(...);
+#    public static void te(...);
+#    public static void td(...);
+#    public static void tw(...);
+#    public static void tv(...);
+#}
 
-    public static void ti(...);
-    public static void te(...);
-    public static void td(...);
-    public static void tw(...);
-    public static void tv(...);
-}
-
+# 删除代码中BasicLog相关的代码
 #-assumenosideeffects class io.github.zhitaocai.dlog.BasicLog {
 #    protected static void log(...);
 #    protected static void logWithInvokeInfo(...);

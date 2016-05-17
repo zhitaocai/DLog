@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         DLog.tw(DOWNLOAD_TAG, this, "下载测试 %d", 3);
         DLog.te(DOWNLOAD_TAG, this, new Exception("测试的Exception"), "下载测试 4");
         DLog.tv(DOWNLOAD_TAG, this, new Exception("测试的Exception"), "下载测试 %d", 5);
+        
+		// 输出详细的调用信息
+		DLog.setIsLogInvokeInfo(true);
+		DLog.ti(DOWNLOAD_TAG, this, "下载测试 1:会输出详细的调用信息");
+		DLog.setIsLogInvokeInfo(false)
     
     }
 }
@@ -42,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
 ## Blog
 
 [如何正确优雅地使用Log](http://zhitaocai.github.io/2016/05/17/android-use-log-gracefully-and-correctly/)
+
+1. **用BuildConfig控制Log开关（推荐）**
+2. 用Proguard控制Log开关
 
 ## License
 
