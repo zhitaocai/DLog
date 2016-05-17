@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+ext {
+	releaseNoteFile = 'ChangeLog.md'            // 相对路径，填仓库下该文件地址即可
+	libraryName = 'DLog'                        // bintray项目名字以及aar的名字，确定好了就不要在修改了
+
+	//compile 'publishedGroupId:artifact:libraryVersionName'
+
+	publishedGroupId = 'io.github.zhitaocai'    // 项目组ID(e.g 包名为io.github.zhitaocai.toastcompat, 那么这里就是io.github.zhitaocai)
+	artifact = 'dlog'                           // 项目ID  (e.g 包名为io.github.zhitaocai.toastcompat, 那么这里就是toastcompat)
+	libraryVersionName = '0.1.0'                // 对应的versionname
+
+	libraryVersionCode = 1
+
+	libDesc = 'A package of debug log to log correctly and gracefully'  // 项目描述
+	libraryVersionDesc = libDesc                                        // 当前版本下的项目描述
+	repoTag = libraryVersionName                                        // 当前版本下所对应的仓库的tag
+	gitRepo = 'zhitaocai/DLog'                                          // 仓库短地址
+	siteUrl = 'https://github.com/zhitaocai/DLog'
+	gitUrl = 'https://github.com/zhitaocai/DLog.git'
+	issueUrl = 'https://github.com/zhitaocai/DLog/issues'
+
+}
+
+android {
+	compileSdkVersion 23
+	buildToolsVersion "23.0.2"
+
+	defaultConfig {
+		minSdkVersion 14
+		targetSdkVersion 23
+		versionCode 1
+		versionName "1.0"
+		consumerProguardFiles 'proguard-rules.pro'
+	}
+//	buildTypes {
+//		release {
+//			minifyEnabled true
+//			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//			consumerProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//		}
+//	}
+}
+
+apply from: 'publish.gradle'
