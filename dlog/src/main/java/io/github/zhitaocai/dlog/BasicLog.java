@@ -121,8 +121,9 @@ class BasicLog {
 			StackTraceElement[] elements = Thread.currentThread().getStackTrace();
 			if (elements.length > 5) {
 				StackTraceElement element = elements[5];
-				String txt = String.format("FileName[ %s ] Method[ %s ] Line[ %d ]", element.getFileName(),
-						element.getMethodName(), element.getLineNumber());
+				String txt =
+						String.format("FileName[ %s ] Method[ %s ] Line[ %d ]", element.getFileName(), element.getMethodName(),
+								element.getLineNumber());
 				// String txt = String.format("Time:[ %d ] Thread:[ %d ] Method:( %s ) FileName:[ %s ] Line:( %d )",
 				// System.currentTimeMillis(), Thread.currentThread().getId(), element.getMethodName(),
 				// element.getFileName(), element.getLineNumber());
@@ -133,10 +134,20 @@ class BasicLog {
 		}
 	}
 
+	/**
+	 * 打印每句log之前，是否打开该log的所在位置（java文件-所在方法名-所在行）
+	 *
+	 * @return boolean
+	 */
 	public static boolean isLogInvokeInfo() {
 		return isLogInvokeInfo;
 	}
 
+	/**
+	 * 打印每句log之前，是否打开该log的所在位置（java文件-所在方法名-所在行）
+	 *
+	 * @param isLogInvokeInfo boolean值
+	 */
 	public static void setIsLogInvokeInfo(boolean isLogInvokeInfo) {
 		BasicLog.isLogInvokeInfo = isLogInvokeInfo;
 	}
