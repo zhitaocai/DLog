@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 ext {
 	releaseNoteFile = 'ChangeLog.md'            // 相对路径，填仓库下该文件地址即可
 	libraryName = 'DLog'                        // bintray项目名字以及aar的名字，确定好了就不要在修改了
+	libLabels = ['android', 'log']              // bintray项目的标签
 
 	//compile 'publishedGroupId:artifact:libraryVersionName'
 
@@ -12,14 +13,13 @@ ext {
 
 	libraryVersionCode = 1
 
-	libDesc = 'A package of debug log to log correctly and gracefully'  // 项目描述
+	libDesc = 'A package of logger to log correctly and gracefully'     // 项目描述
 	libraryVersionDesc = libDesc                                        // 当前版本下的项目描述
 	repoTag = libraryVersionName                                        // 当前版本下所对应的仓库的tag
 	gitRepo = 'zhitaocai/DLog'                                          // 仓库短地址
 	siteUrl = 'https://github.com/zhitaocai/DLog'
 	gitUrl = 'https://github.com/zhitaocai/DLog.git'
 	issueUrl = 'https://github.com/zhitaocai/DLog/issues'
-
 }
 
 android {

@@ -82,7 +82,7 @@ bintray {
 		vcsUrl = project.ext.gitUrl
 
 		// (可选参数) 标签
-		labels = ['android', 'toast', 'compat']
+		labels = project.ext.libLabels
 
 		// (可选参数) 描述
 		desc = project.ext.libDesc
